@@ -34,7 +34,7 @@ items:
 - kind: BuildConfig
   apiVersion: v1beta1
   metadata:
-    name: ticket-monster-jee-build
+    name: tm-jee-build
   triggers:
   - type: imageChange
     imageChange:
@@ -55,7 +55,7 @@ items:
       to:
         name: ticket-monster-jee
   labels:
-    name: ticket-monster-jee-build
+    name: tm-jee-build
 - kind: DeploymentConfig
   apiVersion: v1beta1
   metadata:
