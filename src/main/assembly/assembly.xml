@@ -5,7 +5,6 @@
     <formats>
         <format>zip</format>
     </formats>
-    <baseDirectory>${artifactId}-${version}</baseDirectory>
     <fileSets>
         <fileSet>            
             <directory>../</directory>
@@ -27,6 +26,15 @@
             <outputDirectory>/</outputDirectory>
             <includes>
                 <include>**/.settings/.jsdtscope</include>
+            </includes>
+        </fileSet>
+<!-- this special .git directory is generated in maven build and is REQUIRED for FORGE to apply admin patches -->
+        <fileSet>
+            <directory>.</directory>
+            <outputDirectory>/</outputDirectory>
+            <useDefaultExcludes>false</useDefaultExcludes>
+            <includes>
+                <include>.git/**</include>
             </includes>
         </fileSet>
     </fileSets>   
