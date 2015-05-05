@@ -61,7 +61,7 @@ items:
   metadata:
     name: frontend
   triggers:
-  - type: ImageChange
+   - imageChange:
     imageChangeParams:
       automatic: true
       containerNames:
@@ -69,6 +69,11 @@ items:
       from:
         name: ticket-monster-jee
       tag: latest
+  - github: {secret: secret101}
+    type: github
+  - generic: {secret: secret101}
+    type: generic
+
   template:
     strategy:
       type: Recreate
